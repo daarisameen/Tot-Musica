@@ -1,0 +1,23 @@
+{% extends "layout.html" %} {% block content %}
+<div
+  class="container-sm d-flex justify-content-center align-items-center text-center"
+  style="height: 90vh"
+>
+  <div class="mx-auto p-5 align-middle">
+    <div class="mb-3">
+      <h1 class="display-4">Register as Creator</h1>
+    </div>
+    <div>
+      <p class="lead">
+        Register as a creator to upload your own songs, view summary stats and much more!
+      </p>
+    </div>
+    <div class="d-flex justify-content-center gap-5 mt-5">
+      <a href="{{  url_for('home')  }}" class="btn btn-primary me-5 p" type="button">Maybe Later</a>
+      <form method="post" action="{{ url_for('register_creator') }}">
+        <button type="submit" class="btn btn-success ms-5 p">Yes</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content %}

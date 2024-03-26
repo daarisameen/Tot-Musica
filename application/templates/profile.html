@@ -1,0 +1,56 @@
+{% extends "layout.html" %} {% block content %}
+<div
+  class="container-sm d-flex justify-content-center align-items-center"
+  style="height: 90vh"
+>
+  <form
+    method="post"
+    action=""
+    style="margin-top: 2em; margin-bottom: auto; margin-bottom: auto"
+    class="form-outline w-50"
+  >
+    {{ form.hidden_tag() }}
+    <h1 class="font-weight-normal text-center">Profile</h1>
+    <h6 class="h6 text-muted mb-3 text-center">@{{  current_user.username  }}</h6>
+    <hr>
+    <h3>Edit Profile</h3>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label"
+          >{{ form.name.label }}</label
+        >
+        {% if form.name.errors %} 
+          {{ form.name(class="form-control") }} 
+            <div class="text-danger">{{ form.name.errors[0] }}</div>
+        {% else %} 
+              {{ form.name(class="form-control") }} 
+        {% endif %}
+      </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label"
+        >{{ form.username.label }}</label
+      >
+      {% if form.username.errors %} 
+        {{ form.username(class="form-control") }} 
+          <div class="text-danger">{{ form.username.errors[0] }}</div>
+      {% else %} 
+            {{ form.username(class="form-control") }} 
+      {% endif %}
+    </div>
+    <div class="mb-3">
+        <label for="inputPassword5" class="form-label"
+          >{{ form.current_password.label }}</label
+        >
+        {{ form.current_password(class="form-control") }}
+      </div>
+    <div class="mb-3">
+      <label for="inputPassword5" class="form-label"
+        >{{ form.password.label }}</label
+      >
+      {{ form.password(class="form-control") }}
+    </div>
+    <div>{{ form.submit(class="btn btn-primary my-3") }}</div>
+  </form>
+</div>
+
+{% endblock content %}
+
