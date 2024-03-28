@@ -39,5 +39,6 @@ celery -A schedules worker -B -l info
 
 ### About
 Me: https://www.linkedin.com/in/daaris/ 
+
 PPT Presentation: https://docs.google.com/presentation/d/1LrBXlgOCQ68NiJwY4Y00TC68eCFqHKDww8vR4-tW-sc/edit?usp=sharing
-Video Demo: 
+
